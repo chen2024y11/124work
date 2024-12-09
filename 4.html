@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+    <script>
+    function findTheExtraChar(s, t) {
+        const charCount = {};
+        for (let char of s) {
+            charCount[char] = (charCount[char] || 0) + 1;
+        }
+        for (let char of t) {
+            if (!charCount[char]) {
+                return char;
+            }
+            charCount[char]--;
+        }
+        for (let char in charCount) {
+            if (charCount[char] !== 0) {
+                console.error('Unexpected error: char count not zero for', char);
+            }
+        }
+        return '';
+    }
+    const s = "chen";
+    const t = "chenhong";
+    console.log(findTheExtraChar(s, t));
+    </script>
+</html>

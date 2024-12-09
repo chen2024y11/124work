@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        function part(arr, target) {
+            var right = arr.length;
+            var index = 0;
+            while ( index <= target ) {
+                if(arr[index] <= target) {
+                left++ ;
+                var temp = arr[index];
+                arr[index] = arr[left];
+                arr[left] = temp;
+                index++;
+                } else if (arr[iundex] > target) {
+                    right--;
+                    var temp = arr[index];
+                    arr[index] = arr[right];
+                    arr[right] = temp;
+                } else {
+                    index++;
+                }
+            }
+            return arr;
+        }
+        console.log(part([1,2,3,4,5,6,7,89,5,6,24,51,58,35],55));
+    </script>
+</html>
